@@ -1,0 +1,4 @@
+#check this link to know how to write eBPF program: https://falco.org/blog/tracing-syscalls-using-ebpf-part-1/
+#check this out: https://falco.org/blog/tracing-syscalls-using-ebpf-part-1/
+clang-14 -O2 -target bpf -c trace_kern.c -o trace_kern.o
+clang-14 -O2 -g -Wall -I/usr/include -I/usr/include/bpf -o trace_user trace_user.c -lbpf
