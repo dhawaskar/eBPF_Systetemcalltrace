@@ -2,3 +2,10 @@
 #check this out: https://falco.org/blog/tracing-syscalls-using-ebpf-part-1/
 clang-14 -O2 -target bpf -c trace_kern.c -o trace_kern.o
 clang-14 -O2 -g -Wall -I/usr/include -I/usr/include/bpf -o trace_user trace_user.c -lbpf
+
+
+
+To enable tracing:
+echo 1> /sys/kernel/debug/tracing/tracing_on
+Check the log messages:
+/sys/kernel/tracing/trace_pipe
